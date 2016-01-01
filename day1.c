@@ -3,7 +3,6 @@
 
 char input_file()    ;
 void show_result()   ;
-FILE *a              ;
 char file[20]        ;
 int floors, basement ;
 
@@ -13,6 +12,7 @@ main()
 {
   int i                                                ;
   char b                                               ;
+  FILE *a                                              ;
 
   b = 'a'                                              ;
   floors = 0                                           ;
