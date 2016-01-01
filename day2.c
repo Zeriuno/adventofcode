@@ -3,7 +3,8 @@
 main()
 {
   FILE *f1                                  ;
-  int h, l, w, surf, paper, slack           ;
+  int h, l, w, surf, paper, slack, bow      ;
+  int ribbon, perimeter                     ;
   char file[20]                             ;
 
 
@@ -11,6 +12,7 @@ main()
   scanf("%s", file)                                           ;
   f1 = fopen (file, "r")                    ;
   paper = 0                                 ;
+  ribbon = 0                                ;
 
   while(!feof(f1))
   {
@@ -32,6 +34,31 @@ main()
     }
     paper += surf + slack                   ;
 
+    if(((2*h) + (2*l)) < ((2*h) + (2*w)))
+    {
+      if(((2*h) + (2*l)) < ((2*w) + (2*l)))
+      {
+        perimeter = ((2*h) + (2*l))         ;
+      }
+      else
+      {
+        perimeter = ((2*w) + (2*l))         ;
+      }
+    }
+    else
+    {
+      if(((2*h) + (2*w)) < ((2*w) + (2*l)))
+      {
+        perimeter = ((2*h) + (2*w))         ;
+      }
+      else
+      {
+        perimeter = ((2*w) + (2*l))         ;
+      }
+    }
+    bow = h * l * w                         ;
+
+    ribbon += bow + perimeter               ;
    /*
     debug printf
     printf("(2 × %d × %d) + (2 × %d × %d) + (2 × %d × %d) = %d + %d\n", h, l, h, w, l, w, surf, slack) ;*/
@@ -39,4 +66,7 @@ main()
   fclose(f1)                                ;
   paper = paper - surf - slack              ;
   printf("Surface = %d\n", paper)           ;
+  ribbon = ribbon - perimeter - bow         ;
+  printf("Ribbon = %d\n", ribbon)           ;
+
 }
