@@ -1,11 +1,11 @@
 /**/
 #include <stdio.h>
 
-char saisie_fichier() ;
-void affichage()      ;
-FILE *a               ;
-char file[20]         ;
-int floors, basement  ;
+char input_file()    ;
+void show_result()   ;
+FILE *a              ;
+char file[20]        ;
+int floors, basement ;
 
 
 
@@ -19,7 +19,7 @@ main()
   i = 0                                                ;
   basement = 0                                         ;
 
-  file[20] = saisie_fichier()                          ;
+  file[20] = input_file()                              ;
   a = fopen(file, "r")                                 ;
 
   while(b != '\n')
@@ -39,6 +39,7 @@ main()
         break                                          ;
       default:
         printf("\n\n\nHuston, we have a problem.\n\n") ;
+        printf("I read %c", b)                         ;
         break                                          ;
     }
     if((floors == -1) && (basement == 0))
@@ -46,12 +47,12 @@ main()
   }
   fclose(a)                                            ;
 
-  affichage()                                          ;
+  show_result()                                        ;
 }
 
 
 /*---------------------------------------------------------
---                Saisie du fichier                      --
+--                     input_file                        --
 --                                                       --
 --                                                       --
 --                                                       --
@@ -62,16 +63,16 @@ main()
 ---------------------------------------------------------*/
 
 
-char saisie_fichier()
+char input_file()
 {
-  printf("What's the name of the file to count the floors? ") ;
+  printf("What's the name of the instructions file?: ")       ;
   scanf("%s", file)                                           ;
   return file[20]                                             ;
 }
 
 
 /*---------------------------------------------------------
---                Affichage du résultat                  --
+--                       show_result                     --
 --                                                       --
 --                                                       --
 --                                                       --
@@ -82,7 +83,7 @@ char saisie_fichier()
 ---------------------------------------------------------*/
 
 
-void affichage()
+void show_result()
 {
   printf("Santa Claus is on floor n. %d\n", floors)    ;
   printf("And he first entered the basement at position n.%d\n", basement) ;
