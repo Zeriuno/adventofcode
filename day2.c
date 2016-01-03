@@ -1,16 +1,17 @@
 #include <stdio.h>
 
-char input_file() ;
+char file[20]     ;
+void input_file() ;
 
 main()
 {
   FILE *f1                                  ;
   int h, l, w, surf, paper, slack, bow      ;
   int ribbon, perimeter                     ;
-  char file[20]                             ;
 
 
-  file[20] = input_file() ;
+
+  input_file()                              ;
 
   f1 = fopen (file, "r")                    ;
   paper = 0                                 ;
@@ -86,11 +87,8 @@ main()
 ---------------------------------------------------------*/
 
 
-char input_file()
+void input_file()
 {
-  char file[20] ;
-
-  printf("What's the name of the instructions file?: ")       ;
+  printf("What's the name of the instructions file? ")       ;
   scanf("%s", file)                                           ;
-  return file[20]                                             ;
 }
