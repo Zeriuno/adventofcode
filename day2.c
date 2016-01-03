@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+char input_file() ;
+
 main()
 {
   FILE *f1                                  ;
@@ -8,8 +10,8 @@ main()
   char file[20]                             ;
 
 
-  printf("What's the name of the instructions file? ")        ;
-  scanf("%s", file)                                           ;
+  file[20] = input_file() ;
+
   f1 = fopen (file, "r")                    ;
   paper = 0                                 ;
   ribbon = 0                                ;
@@ -69,4 +71,26 @@ main()
   ribbon = ribbon - perimeter - bow         ;
   printf("Ribbon = %d\n", ribbon)           ;
 
+}
+
+
+/*---------------------------------------------------------
+--                     input_file                        --
+--                                                       --
+--                                                       --
+--                                                       --
+--                                                       --
+--                                                       --
+--                                                       --
+--                                                       --
+---------------------------------------------------------*/
+
+
+char input_file()
+{
+  char file[20] ;
+
+  printf("What's the name of the instructions file?: ")       ;
+  scanf("%s", file)                                           ;
+  return file[20]                                             ;
 }
