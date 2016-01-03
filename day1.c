@@ -1,7 +1,7 @@
 /**/
 #include <stdio.h>
 
-char input_file()    ;
+void input_file()    ;
 void show_result()   ;
 char file[20]        ;
 int floors, basement ;
@@ -19,7 +19,7 @@ main()
   i = 0        ;
   basement = 0 ;
 
-  file[20] = input_file()                              ;
+  input_file()                              ;
   a = fopen(file, "r")                                 ;
 
   while(b != '\n')
@@ -63,11 +63,10 @@ main()
 ---------------------------------------------------------*/
 
 
-char input_file()
+void input_file()
 {
-  printf("What's the name of the instructions file?: ")       ;
+  printf("What's the name of the instructions file? ")       ;
   scanf("%s", file)                                           ;
-  return file[20]                                             ;
 }
 
 
