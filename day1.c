@@ -10,14 +10,14 @@ int floors, basement ;
 
 main()
 {
-  int i                                                ;
-  char b                                               ;
-  FILE *a                                              ;
+  int i   ;
+  char b  ;
+  FILE *a ;
 
-  b = 'a'                                              ;
-  floors = 0                                           ;
-  i = 0                                                ;
-  basement = 0                                         ;
+  b = 'a'      ;
+  floors = 0   ;
+  i = 0        ;
+  basement = 0 ;
 
   file[20] = input_file()                              ;
   a = fopen(file, "r")                                 ;
