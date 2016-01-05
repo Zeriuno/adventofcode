@@ -66,7 +66,7 @@ main()
 void input_file()
 {
   printf("What's the name of the instructions file? ")       ;
-  scanf("%s", file)                                           ;
+  scanf("%s", file)                                          ;
 }
 
 
