@@ -1,0 +1,61 @@
+programme parcours
+déclarations
+  variable fic en fichiers
+  variable c en caractère
+  variables cn, itinéraire en réels
+  variables i, j en entiers
+  variable trouve en booléen
+  variable tab_itineraire en tableau [1000] de réels
+  variable tab_lieux en tableau[1000][2] de réels
+début
+
+/*initialisation des variables*/
+  trouve ← FAUX
+  itinéraire ← 0
+
+/*lecture du fichier*/
+  fic ← ouvrir(map.txt, texte, lecture)
+  tantque(!findefichier) faire
+    si trouve = FAUX
+      i++
+    finsi
+    lire(fic, c)
+    selonque c alors
+      cas ^ :
+        c_n ← 1
+        fincas
+      cas \/ :
+        c_n ← -1
+        fincas
+      cas > :
+        c_n ← 0,00001
+        fincas
+      cas < :
+        c_n ← -0,00001
+        fincas
+      cas par défaut :
+        écrire("Keskispasse?")
+        fincas
+    finselonque
+    itinéraire ← itineraire + c_n
+    tab_itineraire[i] ← itineraire
+    tantque(trouve = FAUX)
+      pour j variant de 1 à i faire
+        si(itineraire = tab_lieux[j]) alors
+          tab_lieux[j][2]++
+          trouve ← VRAI
+        finsi
+      finpour
+      si(trouve = FAUX)
+        j++
+        tab_lieux[j] ← itinéraire
+      finsi
+    fintantque
+  fintantque
+
+  fermer(fic)
+
+  écrire("Cadeaux distribués : ", i)
+  écrire("Maisons visitées : ", j)
+
+fin 

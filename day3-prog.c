@@ -7,6 +7,7 @@ char file[20]     ;
 main()
 {
   int map[1000][1000]       ;
+  int i                     ;
   char c                    ;
   FILE *f1                  ;
 
@@ -19,9 +20,11 @@ main()
   while((c=fgetc(f1)) != EOF)
   {
     printf("Bonne année!\n") ;
+    i++;
   }
 
-  printf("Enfin!\n") ;  
+  printf("Enfin!\n") ;
+  printf("%d", i)    ;
 
 }
 
