@@ -87,7 +87,7 @@ Latitudine:
 ^  la++
 v  la--
 
-*/
+
 
 
 main ()
