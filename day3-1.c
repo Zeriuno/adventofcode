@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void check()  ;
+
 main()
 {
 	int la = 0, lo = 0      ;
@@ -8,21 +10,35 @@ main()
 
 	int i                   ;
 
-	i = 0 ;
-	while(i < houses)
+	/*get the file and open it*/
+	while(!feof)
 	{
-		if!((coordinates[0][i] == la ) && (coordinates[1][i] == lo ))
-			i++                     ;
-		else
-			i = houses + 1          ;
+		check() ;
+		/*read a char*/
+		/*change coordinates*/
 	}
-	if(i > houses)
-	{
-		coordinates[0][houses] = la ;
-		coordinates[1][houses] = lo ;
-		houses++                    ;
-	}
+
+	printf("Santa visited so many houses : %d", houses) ;
 }
+
+void check()
+	{
+		i = 0 ;
+		while(i < houses)
+		{
+			if!((coordinates[0][i] == la ) && (coordinates[1][i] == lo ))
+				i++                     ;
+			else
+				i = houses + 1          ;
+		}
+		if(i > houses)
+		{
+			coordinates[0][houses] = la ;
+			coordinates[1][houses] = lo ;
+			houses++                    ;
+		}
+	}
+
 /*
 
 Uno schema cartesiano.
