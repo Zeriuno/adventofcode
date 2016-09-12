@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void check()  ;
-
+void move()   ;
 main()
 {
 	int la = 0, lo = 0      ;
@@ -10,6 +10,8 @@ main()
 
 	int i                   ;
 
+	char c                  ;
+
 	/*get the file and open it*/
 	while(!feof)
 	{
@@ -17,7 +19,7 @@ main()
 		/*read a char*/
 		/*change coordinates*/
 	}
-
+	/*close the file*/
 	printf("Santa visited so many houses : %d", houses) ;
 }
 
