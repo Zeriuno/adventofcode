@@ -23,6 +23,12 @@ selonque caractètre est
   < : lo--
   > : lo++
 finselonque
+
+4. Cercare le coordinate presenti tra quelle già salvate: se non si trova, salvare le coordinate nella lista.
+Se si trova, passare al 3.
+
+5. Se il carattere è feof, stampare la lunghezza della lista delle coordinate, e poi chiudere.
+
 Coordinate [][]
 
 Ad ogni passo latitudine e longitudine vanno in una tabella se percorrendo la tabella non si trovano gli stessi valori
