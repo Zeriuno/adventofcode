@@ -93,7 +93,7 @@ void input_file()
 
 /*
 
-Uno schema cartesiano.
+Un piano cartesiano.
 La casella di partenza ed ogni nuova casella ulteriore vengono contate
 
 1. Partire con
