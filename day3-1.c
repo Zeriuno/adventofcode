@@ -41,7 +41,7 @@ void check()
 	}
 void move()
 {
-
+	//what happens when you move
 }
 
 /*
