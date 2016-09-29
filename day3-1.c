@@ -8,38 +8,41 @@ main()
 	int cordinates[2][1000] ;
 	int houses = 0          ;
 
-	int i                   ;
-
 	char c                  ;
 
 	/*get the file and open it*/
 	while(!feof)
 	{
-		check() ;
+		check() ; /*Starting at 0,0*/
 		/*read a char*/
 		/*change coordinates*/
 	}
 	/*close the file*/
-	printf("Santa visited so many houses : %d", houses) ;
+	printf("Santa visited this many houses : %d", houses) ;
+	return 0 ;
 }
 
 void check()
 	{
-		i = 0 ;
+		int i = 0              ;
 		while(i < houses)
 		{
-			if!((coordinates[0][i] == la ) && (coordinates[1][i] == lo ))
-				i++                     ;
+			if!((coordinates[0][i] == la ) && (coordinates[1][i] == lo )) //IF coordinates are not in the cell
+				i++                     ; //Keep on checking the table
 			else
-				i = houses + 1          ;
+				i = houses + 1          ; //Else quit the loop
 		}
-		if(i > houses)
+		if(i > houses) //If we quit the loop because of the 'else', we add to the table the current coordinates
 		{
 			coordinates[0][houses] = la ;
 			coordinates[1][houses] = lo ;
 			houses++                    ;
 		}
 	}
+void move()
+{
+
+}
 
 /*
 
