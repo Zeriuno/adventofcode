@@ -52,7 +52,7 @@ void check()
 			coordinates[0][houses] = la           ;
 			coordinates[1][houses] = lo           ;
 			houses++                              ;
-			printf("Served %d houses!\n", houses) ;
+//			printf("Served %d houses!\n", houses) ;
 		}
 	}
 
