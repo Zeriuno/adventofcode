@@ -8,7 +8,7 @@ int floors, basement ;
 
 
 
-main()
+int main()
 {
   int i   ;
   char b  ;
@@ -48,6 +48,7 @@ main()
   fclose(a)                                            ;
 
   show_result()                                        ;
+  return 0 ;
 }
 
 
