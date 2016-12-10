@@ -55,7 +55,8 @@ def blocks(param):
             path.append(position)
         turn = switch_turn(turn)
     distance = abs(position[0]) + abs(position[1])
-    return distance
+    print(path)
+    print("distance = ", distance)
 
 def switch_turn(axis):
     '''
