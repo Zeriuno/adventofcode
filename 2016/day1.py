@@ -8,8 +8,8 @@ def blocks(param):
     instructions.close()
     set = go.split(", ")
     position = [0, 0]
-    turn = True
-    axisX = 1
+    turn = True # if True, the axis affected is X, else is Y
+    axisX = 1 # 1 if movement will be oriented towards +, -1 if not
     axisY = 1
     for s in set:
         direction = s[0]
