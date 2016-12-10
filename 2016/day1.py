@@ -43,26 +43,26 @@ def blocks(param):
                 print("Huston, we got a problem")
         move = int(s[1:])  # get the hop
         if(turn == 0):
-            move *= axisX
+            move = move * axisX
         else:
-            move *= axisY
+            move = move * axisY
         count = 0
         while(abs(count) < abs(move + 1)):  # cover the distance
             count = abs(count) + 1
             if(move < 0):
                 count *= -1
             position[turn] += count
+            print(position)
             path.append(position)
         turn = switch_turn(turn)
     distance = abs(position[0]) + abs(position[1])
-    print(path)
     print("distance = ", distance)
 
 def switch_turn(axis):
     '''
     Switch turn.
     '''
-    if axis == True:
+    if axis == 0:
         return 1
     else:
         return 0
