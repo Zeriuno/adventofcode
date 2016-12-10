@@ -7,12 +7,12 @@ def blocks(param):
         go = line.rstrip()
     instructions.close()
     set = go.split(", ")
-    position = [0, 0]
+    now = (0, 0)
     turn = 0 # if 0, the axis affected is X, if 1 is Y
     axisX = 1 # 1 if movement will be oriented towards +, -1 if not
     axisY = 1
     path = []
-    path.append(position)
+    path.append(now)
     for s in set:
         direction = s[0]  # get the direction
         if(turn == 0):
@@ -43,21 +43,29 @@ def blocks(param):
                 print("Huston, we got a problem")
         move = int(s[1:])  # get the hop
         if(turn == 0):
-            move = move * axisX
+            move *= axisX
         else:
-            move = move * axisY
+            move *= axisY
         count = 0
         while(count < abs(move)):  # cover the distance
             count = abs(count) + 1
             if(move < 0):
-                position[turn] -1
+                if(turn == 0):
+                    now = ((now[0] - 1), now[1])
+                else:
+                    now = (now[0], (now[1] - 1))
             else:
-                position[turn] += 1
-            print(position)
-            path.append(position)
+                if(turn == 0):
+                    now = ((now[0] + 1), now[1])
+                else:
+                    now = (now[0], (now[1] + 1))
+            if now not in path:
+                path.append(now)
+            else:
+                print("Again in", now, abs(now[0]) + abs(now[1]), " blocks away")
         turn = switch_turn(turn)
-    distance = abs(position[0]) + abs(position[1])
-    print("distance = ", distance)
+    distance = abs(now[0]) + abs(now[1])
+    print("End distance = ", distance)
 
 def switch_turn(axis):
     '''
