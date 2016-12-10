@@ -8,12 +8,12 @@ def blocks(param):
     instructions.close()
     set = go.split(", ")
     position = [0, 0]
-    turn = True # if True, the axis affected is X, else is Y
+    turn = 0 # if 0, the axis affected is X, if 1 is Y
     axisX = 1 # 1 if movement will be oriented towards +, -1 if not
     axisY = 1
     for s in set:
         direction = s[0]
-        if(turn == True):
+        if(turn == 0):
             if(direction == 'L'):
                 if(axisY == 1):
                     axisX = -1
@@ -40,12 +40,17 @@ def blocks(param):
             else:
                 print("Huston, we got a problem")
         move = int(s[1:])
-        if(turn):
+        if(turn == 0):
             move *= axisX
-            position[0] += move
         else:
             move *= axisY
-            position[1] += move
+        count = 0
+        while(abs(count) < abs(move + 1)):
+            count = abs(count) + 1
+            if(move < 0):
+                count *= -1
+            position[turn] += count
+            path.append(position)
         turn = switch_turn(turn)
     distance = abs(position[0]) + abs(position[1])
     return distance
@@ -55,6 +60,6 @@ def switch_turn(axis):
     Switch turn.
     '''
     if axis == True:
-        return False
+        return 1
     else:
-        return True
+        return 0
