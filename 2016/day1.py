@@ -11,6 +11,8 @@ def blocks(param):
     turn = 0 # if 0, the axis affected is X, if 1 is Y
     axisX = 1 # 1 if movement will be oriented towards +, -1 if not
     axisY = 1
+    path = []
+    path.append(position)
     for s in set:
         direction = s[0]
         if(turn == 0):
