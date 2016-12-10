@@ -14,7 +14,7 @@ def blocks(param):
     path = []
     path.append(position)
     for s in set:
-        direction = s[0]
+        direction = s[0]  # get the direction
         if(turn == 0):
             if(direction == 'L'):
                 if(axisY == 1):
@@ -41,13 +41,13 @@ def blocks(param):
                     axisY = 1
             else:
                 print("Huston, we got a problem")
-        move = int(s[1:])
+        move = int(s[1:])  # get the hop
         if(turn == 0):
             move *= axisX
         else:
             move *= axisY
         count = 0
-        while(abs(count) < abs(move + 1)):
+        while(abs(count) < abs(move + 1)):  # cover the distance
             count = abs(count) + 1
             if(move < 0):
                 count *= -1
