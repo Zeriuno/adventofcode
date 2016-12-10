@@ -47,11 +47,12 @@ def blocks(param):
         else:
             move = move * axisY
         count = 0
-        while(abs(count) < abs(move + 1)):  # cover the distance
+        while(count < abs(move)):  # cover the distance
             count = abs(count) + 1
             if(move < 0):
-                count *= -1
-            position[turn] += count
+                position[turn] -1
+            else:
+                position[turn] += 1
             print(position)
             path.append(position)
         turn = switch_turn(turn)
