@@ -19,7 +19,7 @@ def check_file(param):
 		i[check] = int(i[check])
 		check += 1
 
-		if(check == 2):
+		if(check == 3):
 			triangles += tri_test(t,r,i)
 			check = 0
 	print("Valid triangles =", triangles)
