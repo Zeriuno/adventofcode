@@ -8,12 +8,12 @@ def check_file(param):
 	triangles = 0
 	for line in instructions:
 		t1, t2, t3 = line.split()
+		t1 = int(t1)
+		t2 = int(t2)
+		t3 = int(t3)
 		if(triangle_test(t1, t2, t3)):
-			print("TRIANGLE!\n")
 			triangles += 1
-		else:
-			print(t1, t2 , t3)
-	print(triangles)
+	print("Valid triangles =", triangles)
 	instructions.close()
 
 def triangle_test(s1, s2, s3):
@@ -21,7 +21,6 @@ def triangle_test(s1, s2, s3):
 	Tests if the given parameters can make a valid triangle
 	"""
 	if((s1 + s2) <= s3):
-		print ( (s1 + s2 ), " <= ", s3)
 		return False
 	elif((s2 + s3) <= s1):
 		return False
