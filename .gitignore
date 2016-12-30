@@ -3,3 +3,4 @@ __pycache__
 day1
 day2
 *.o
+test.*
