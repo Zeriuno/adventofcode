@@ -54,4 +54,3 @@ class Room:
 1. Take a room name.
 
 
-4. If that's a real room, add the sector ID to the total.
