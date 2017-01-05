@@ -20,6 +20,10 @@ class Room:
 		"""
 		Creation of a Room.
 		room1 = Room(aaaaa-bbb-z-y-x-123[abxyz])
+		self.checksum contains only the checksum, without the brackets: "abxyz"
+		self.ID contains only the ID number: 123
+		self.string contains only the letters of the room, without dashes: "aaaaabbbzyx"
+		
 		"""
 		self.checksum = self.split('[')[-1][:-1]
 		self.ID = int(self.split('-')[-1].split('[')[0])
