@@ -30,6 +30,15 @@ class Room:
 		self.string = ''
 		for bit in self.split('-')[:-1]:
 			self.string += bit
+		occurrencesletters = []
+		occurrences = []
+		for letter in self.string:
+			if(letter in occurrencesletters):
+				occurrences[occurrencesletters.index(letter)] += 1
+			else:
+				occurrencesletters.append(letter)
+				occurrences.append(1)
+		# now occurrences is an unordered list of the occurrences
 		self.occurrences = collection.Counter(self.string)
 
 		if():
