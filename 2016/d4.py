@@ -23,7 +23,7 @@ class Room:
 		self.checksum contains only the checksum, without the brackets: "abxyz"
 		self.ID contains only the ID number: 123
 		self.string contains only the letters of the room, without dashes: "aaaaabbbzyx"
-		
+		self.is_real is set to True if the name follows the rules of a real room
 		"""
 		self.checksum = self.split('[')[-1][:-1]
 		self.ID = int(self.split('-')[-1].split('[')[0])
@@ -31,6 +31,11 @@ class Room:
 		for bit in self.split('-')[:-1]:
 			self.string += bit
 		self.occurrences = collection.Counter(self.string)
+
+		if():
+			self.is_real = True
+		else:
+			self.is_real = False
 
 
 
